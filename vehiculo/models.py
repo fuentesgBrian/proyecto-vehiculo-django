@@ -31,9 +31,6 @@ class Vehiculo(models.Model):
     
     class Meta:
         ordering = ['marca']
-        
-        def __unicode__(self):
-            return self.marca
 
     def __str__(self):
         return self.marca

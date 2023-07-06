@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Post</title>
+</head>
+
+<body>
+    <h1>Agregar Post</h1>
+    <form action="/vehiculo/add/url/" method="post">
+        {% csrf_token %}
+        Marca:<br>
+        <select name="marca">
+            <option value="Fiat">Fiat</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Ford">Ford</option>
+            <option value="Toyota">Toyota</option>
+        </select>
+        <br><br>
+        Modelo:<br>
+        <input name="modelo">
+        <br><br>
+        Serial Carrocería:<br>
+        <input name="serial_carro">
+        <br><br>
+        Serial Motor:<br>
+        <input name="serial_motor">
+        <br><br>
+        Categoria:<br>
+        <select name="categoria">
+            <option value="Particular">Particular</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Carga">Carga</option>
+        </select>
+        <br><br>
+        Precio:<br>
+        <input name="precio">
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
