@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Post</title>
-</head>
-
-<body>
-    <h1>Agregar Post</h1>
+{% extends 'vehiculo/base.html' %}
+{% block formulario %}
+<div style="margin:20px 20px;">
     <form action="/vehiculo/add/url/" method="post">
         {% csrf_token %}
-        Marca:<br>
+        Marca:
         <select name="marca">
             <option value="Fiat">Fiat</option>
             <option value="Chevrolet">Chevrolet</option>
@@ -19,26 +11,26 @@
             <option value="Toyota">Toyota</option>
         </select>
         <br><br>
-        Modelo:<br>
+        Modelo:
         <input name="modelo">
         <br><br>
-        Serial Carrocería:<br>
+        Serial Carrocería:
         <input name="serial_carro">
         <br><br>
-        Serial Motor:<br>
+        Serial Motor:
         <input name="serial_motor">
         <br><br>
-        Categoria:<br>
+        Categoria:
         <select name="categoria">
             <option value="Particular">Particular</option>
             <option value="Transporte">Transporte</option>
             <option value="Carga">Carga</option>
         </select>
         <br><br>
-        Precio:<br>
+        Precio:
         <input name="precio">
         <br><br>
         <input type="submit" value="Enviar">
     </form>
-</body>
-</html>
+</div>
+{% endblock formulario %}

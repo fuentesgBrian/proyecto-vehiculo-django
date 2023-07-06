@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} {% bootstrap_messages %} {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Practica de Consolidacion 6</title>
 </head>
 <body>
-    
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Vehiculos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                    <a class="nav-link" href="/vehiculo/add/">Agregar</a>
+                    <a class="nav-link" href="#">Listar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% endblock navbar %}
+    {% block content %}{% endblock content %}
+    {% block formulario %}{% endblock formulario %}
 </body>
 </html>
