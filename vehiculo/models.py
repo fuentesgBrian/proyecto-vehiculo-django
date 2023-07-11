@@ -30,7 +30,14 @@ class Vehiculo(models.Model):
         super().save(*args,**kwargs)
     
     class Meta:
-        ordering = ['marca']
+        permissions = (
+            ("visualizar_catalogo","Puede visualizar Catálogo de Vehículos"),
+            #("can_add_vehiculo","Puede agregar Vehículos")
+            ("add_vehiculomodel","Puede agregar Vehículos")
+            )
+        verbose_name = 'Vehiculo'
+        verbose_name_plural = 'Vehiculos'
+        ordering = ['created']
 
     def __str__(self):
         return self.marca

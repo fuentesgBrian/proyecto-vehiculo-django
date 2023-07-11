@@ -1,8 +1,10 @@
 {% extends 'vehiculo/base.html' %}
+{% load crispy_forms_tags %}
 {% block formulario %}
 <div style="margin:20px 20px;">
     <form action="/vehiculo/add/url/" method="post">
         {% csrf_token %}
+        {{form|crispy}}
         Marca:
         <select name="marca">
             <option value="Fiat">Fiat</option>

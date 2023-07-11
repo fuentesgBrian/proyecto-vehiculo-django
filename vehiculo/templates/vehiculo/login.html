@@ -1,0 +1,13 @@
+{% include "vehiculo/base.html" %} {% block content %} {% load crispy_forms_tags %}
+<!--Login-->
+<div class="container py-5">
+<h1 style="color: darkgray;">Iniciar Sesión</h1>
+<form method="POST">
+{% csrf_token %}
+{{ login_form|crispy }}<br>
+<button class="btn btn-dark" type="submit" style="background-color: rgb(71, 71, 71);">Ingresar</button>
+</form>
+<p class="text-center">Si no tienes una cuenta, registrate en el siguiente <a
+href="/register" style="color: rgb(16, 0, 247);"> link</a>.</p>
+</div>
+{% endblock %}
